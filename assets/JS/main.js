@@ -18,12 +18,12 @@ console.log(userAge);
 
 const generalPrice = 0.21;
 
-let finalPrice = howManyKm * generalPrice;
+let finalPrice = howManyKm * generalPrice; /* i calcoli si possono  far fare anche fuori dalle condizioni !! */
 console.log(finalPrice.toFixed( 2 ));
 
 if (userAge <= 17) {
-    const minorPrice = generalPrice - (generalPrice *20 / 100)
-    finalPrice = howManyKm * minorPrice
+    const minorPrice = generalPrice - (generalPrice *20 / 100) /* questa sta qua per evitare di fare il calcolo al di fuori del caso specifico (se servisse da altre parti oltre che qui sarebbe meglio portarla fuori da if else e renderla generale invece che specifica) */
+    finalPrice = howManyKm * minorPrice /* niente let perché è sempre la stessa variabile messa fuori, se metto let diventa una var diversa in pratica */
     console.log(finalPrice.toFixed( 2 ));    
 } else if (userAge >= 65) {
     const elderlyPrice = generalPrice - (generalPrice *40 / 100)
@@ -31,3 +31,4 @@ if (userAge <= 17) {
     console.log(finalPrice.toFixed( 2 ));
 }
 document.getElementById("trip_price").innerHTML = `${finalPrice.toFixed( 2 )} €`;
+/* questa può stare qui da sola e scrive il risultato per ogni possibile operazione */
