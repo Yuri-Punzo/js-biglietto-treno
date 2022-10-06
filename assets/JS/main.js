@@ -17,22 +17,16 @@ const userAge = prompt("Quanti anni hai ?");
 console.log(userAge);
 
 const generalPrice = 0.21;
-console.log(generalPrice);
-const minorPrice = generalPrice - (generalPrice *20 / 100)
-console.log(minorPrice);
-const elderlyPrice = generalPrice - (generalPrice *40 / 100)
-console.log(elderlyPrice);
+let finalPrice = howManyKm * generalPrice;
+console.log(finalPrice.toFixed( 2 ));
 
 if (userAge <= 17) {
-    let finalPrice = howManyKm * minorPrice
-    console.log(finalPrice.toFixed( 2 ));
-    document.getElementById("trip_price").innerHTML = `${finalPrice.toFixed( 2 )} €`
+    const minorPrice = generalPrice - (generalPrice *20 / 100)
+    finalPrice = howManyKm * minorPrice
+    console.log(finalPrice.toFixed( 2 ));    
 } else if (userAge >= 65) {
-    let finalPrice = howManyKm * elderlyPrice
+    const elderlyPrice = generalPrice - (generalPrice *40 / 100)
+    finalPrice = howManyKm * elderlyPrice
     console.log(finalPrice.toFixed( 2 ));
-    document.getElementById("trip_price").innerHTML = `${finalPrice.toFixed( 2 )} €`
-} else {
-    let finalPrice = howManyKm * generalPrice
-    console.log(finalPrice.toFixed( 2 ));
-    document.getElementById("trip_price").innerHTML = `${finalPrice.toFixed( 2 )} €`
 }
+document.getElementById("trip_price").innerHTML = `${finalPrice.toFixed( 2 )} €`;
