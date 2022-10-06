@@ -17,6 +17,7 @@ const userAge = prompt("Quanti anni hai ?");
 console.log(userAge);
 
 const generalPrice = 0.21;
+
 let finalPrice = howManyKm * generalPrice;
 console.log(finalPrice.toFixed( 2 ));
 
