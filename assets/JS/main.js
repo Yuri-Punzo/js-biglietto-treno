@@ -17,8 +17,11 @@ const userAge = prompt("Quanti anni hai ?");
 console.log(userAge);
 
 const generalPrice = 0.21;
-const minorPrice = 0.168;
-const elderlyPrice = 0.126;
+console.log(generalPrice);
+const minorPrice = generalPrice - (generalPrice *20 / 100)
+console.log(minorPrice);
+const elderlyPrice = generalPrice - (generalPrice *40 / 100)
+console.log(elderlyPrice);
 
 if (userAge <= 17) {
     let finalPrice = howManyKm * minorPrice
